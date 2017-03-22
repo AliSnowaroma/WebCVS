@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="imooc.css" type="text/css">
+    <style>
+    .left {
+        width: auto;
+        height: 200px;
+    }
+    
+    .left div {
+        width: 350px;
+        height: 150px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        background: #bbffaa;
+        border: 1px solid #ccc;
+    }
+    
+    span {
+        color: blue;
+    }
+    </style>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+    <h2>closest方法()</h2>
+    <div class="left first-div">
+    <div class="div">
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </div>
+    </div>
+    <br/>
+    <button>点击：closest传递选择器 </button>
+    <button>点击：closest传递一个元素对象</button>
+    <script type="text/javascript">
+    $("button:first").click(function() {
+            //?
+    })
+    </script>
+    <script type="text/javascript">
+    $("button:last").click(function() {
+        var itemB = $('.item-b')
+        $('li.item-1')
+            .closest(itemB)
+            .css('border', '1px solid blue');
+    })
+
+//     起始位置不同：.closest开始于当前元素 .parents开始于父元素
+// 遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合
+// 结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象
+    </script>
+</body>
+
+</html>

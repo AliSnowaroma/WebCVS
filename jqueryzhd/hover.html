@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{margin:0;padding:0;}
+	#tab{width:500px;height:100px;overflow: hidden;margin:200px auto;list-style: none;}
+	li{width:98px;height:98px;border:1px solid #333;float:left;list-style: none;}
+	.show{background-color:red;}
+	a{display:block;width:98px;height:98px;}
+</style>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<body>
+	<ul id="tab">
+		<li><a href="" class="show"></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+</body>
+<script type="text/javascript">
+	$(function(){
+	    var links = $('#tab a');
+	    console.log(links);
+	    //var content = $('.show');
+	    var currentIdx = 0;
+	    links.hover(function(){
+	         var currentIdx = links.index(this);
+	         console.log(currentIdx)
+	         //content.hide();
+	         links.removeClass(function(index){
+	             return ('show');
+	         });
+	         $(this).addClass('show');
+	         //$(content[currentIdx]).show();
+	    }); 
+    })
+</script>
+</html>
